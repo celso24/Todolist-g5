@@ -25,24 +25,25 @@
     
 
     <div class="card-body">
- <?php 
 
-    $tareas='';
-                if (isset($_POST['btnGuardar'])) {
-                  $tarea = $_POST['tarea'];
-                  include('db.php');
-
-                  //actualizacion del registro
-                  $rsU = mysqli_query($connexion, "INSERT INTO tareas(nomtarea) VALUES('$tarea')");
+      <?php
+        //$cod = mysqli_real_escape_string($connexion, (strip_tags($_GET["cod"], ENT_QUOTES)));
+        $tareas = '';
+        if (isset($_POST['btnGuardar'])) {
+            $tarea = $_POST['tarea'];
+            //$location = $_POST['location'];
+            //$rsU = mysqli_query($connexion, "INSERT INTO tareas (tarea) VALUES('$tareas')");
+            $rsU = mysqli_query($connexion, "INSERT INTO tareas(tarea) VALUES('nomtarea')");
             
-                  if ($rsU) {
-                    echo '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Los datos han sido guardados con éxito.</div>';
-                  } else {
-                    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Error, no se pudo guardar los datos.</div>';
-                  }
-                
-                }
-    ?>
+
+           // $mysqli->query("INSERT INTO tareas (tarea) VALUES('$tareas')") or die($mysqli->error);
+
+            $_SESSION['message'] = "Record has been saved!";
+            $_SESSION['msg_type'] = "success";
+
+            header('location: todo.php');
+        }
+        ?>
         <header class="text-center text-light my-4">
             <h4 class="mb-4">Descripción de las tareas</h4>
         </header>
