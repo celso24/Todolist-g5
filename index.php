@@ -16,12 +16,12 @@
 
 <body  >
 <form action="validar.php" method="post">
-  <h1>TODOLIS</h1>
+  <h1>TODOLIStAR</h1>
 
   <div class="login-continer" >
       <img src="IMG/listar2.webp" alt="" >
-      <p>Iniciar tareas</p>
-      <label for="">Ingrese Correo Electornico</label>
+      <p>Iniciar tAR</p>
+      <label for="">Ingrese  Elec</label>
       <div class="fields">
          <div class="data">
          <i class="fas fa-at"></i>
